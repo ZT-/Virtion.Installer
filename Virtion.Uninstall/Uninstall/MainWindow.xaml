@@ -3,10 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="卸载" Height="300" Width="400"
         WindowStartupLocation="CenterScreen"
+        Icon="icon.ico"
         >
     <Grid>
-        <TextBlock Text="感谢使用！"
-                   />
+        <TextBlock 
+            Text="感谢使用！"
+            HorizontalAlignment="Center"
+            Margin="0,50,0,100"
+            FontSize="24"
+            />
         <Button Content="卸载" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
