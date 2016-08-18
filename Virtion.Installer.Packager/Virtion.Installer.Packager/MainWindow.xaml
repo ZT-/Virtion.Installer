@@ -1,0 +1,112 @@
+﻿<Controls:MetroWindow
+    x:Class="Virtion.Installer.Packager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:plane="clr-namespace:Virtion.Installer.Packager.Controls.Plane"
+        Background="#eeeef2"
+        GlowBrush="Black"    
+        WindowTitleBrush="#eeeef2"
+        TitleForeground="#454545"
+        WindowMaxButtonStyle="{DynamicResource CommondButtonStyle}"      
+        WindowMinButtonStyle="{DynamicResource CommondButtonStyle}"
+        WindowCloseButtonStyle="{DynamicResource CommondButtonStyle}"
+        WindowStartupLocation="CenterScreen"     
+        Height="700" Width="1100" Icon="Resource/icon.ico"
+    
+    >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="#007acc" 
+            BorderThickness="0,0,0,2">
+            <ToolBar >
+
+                <Button x:Name="B_New"
+                        Width="60"    
+                        Content="New"    
+                        Click="B_New_OnClick"/>
+
+                <Button x:Name="B_Open"
+                        Width="60"    
+                        Content="Open"    
+                        Click="B_Open_OnClick"/>
+
+                <Button x:Name="B_Build"
+                        Width="60"    
+                        Content="Build"    
+                        Click="B_Build_OnClick"/>
+
+                <ComboBox x:Name="CB_Platform"
+                        Margin="10,0,0,0"
+                        Width="80" 
+                        SelectedIndex="0"
+                        DropDownClosed="CB_Platform_OnDropDownClosed"   
+                        >
+                    <ComboBoxItem Content="X86"/>
+                    <ComboBoxItem Content="X64"/>
+                </ComboBox>
+
+                <Button x:Name="B_Save"
+                        Width="60"    
+                        Content="Save"    
+                        Click="B_Save_OnClick"/>
+
+            </ToolBar>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+
+            <plane:ResourcePlane x:Name="P_Resource"
+                />
+
+            <GridSplitter   
+                Background="#CCCCCC"
+                Width="2"
+                          />
+
+            <Label  Grid.Column="1"
+                HorizontalAlignment="Center" 
+                Margin="0,-200,0,0"    
+                VerticalAlignment="Center"     
+                 FontSize="16"   
+                Content="Create or Open a new project to getting start!"
+                />
+
+            <Grid  Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <plane:ProjectSettingPlane x:Name="P_Setting"
+                    Visibility="Hidden"
+                    />
+                  <plane:LogPlane x:Name="P_Log"
+                       Grid.Row="1" 
+                        />
+            </Grid>
+            
+        </Grid>
+
+        <Border Grid.Row="2"
+                Background="#007acc">
+            <TextBlock  x:Name="TB_Tip"
+                Margin="5,0"
+                VerticalAlignment="Center"        
+                Foreground="White"
+                Text=""        
+            />
+        </Border>
+
+    </Grid>
+
+</Controls:MetroWindow>

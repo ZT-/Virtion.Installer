@@ -5,3 +5,6 @@
 /Virtion.Installer.UI/Virtion.Installer.UI/bin
 /Virtion.Installer.UI/Virtion.Installer.UI/obj
 /Virtion.Installer.UI/Virtion.Installer.UI/Resource/bg.jpg
+/Virtion.Installer.Packager/packages
+/Virtion.Installer.Packager/Virtion.Installer.Packager/obj
+/Virtion.Installer.Packager/Virtion.Installer.Packager/bin

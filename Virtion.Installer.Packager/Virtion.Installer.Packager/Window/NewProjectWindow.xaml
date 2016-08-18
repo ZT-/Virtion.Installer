@@ -1,0 +1,83 @@
+﻿<Controls:MetroWindow x:Class="Virtion.Installer.Packager.Window.NewProjectWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewProjectWindow" 
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+        Height="250" Width="500"
+        WindowStyle="ToolWindow" 
+        ShowMinButton="False"   
+        ShowMaxRestoreButton="False"
+       Background="#eeeef2"
+        GlowBrush="Black"    
+        WindowTitleBrush="#eeeef2"
+        TitleForeground="#454545"         
+        WindowCloseButtonStyle="{DynamicResource CommondButtonStyle}"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Project Name" 
+               Grid.Column="0" Grid.Row="0"
+               HorizontalAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontSize="14"  
+               />
+        <TextBox x:Name="TB_ProjectName"
+            Grid.Column="1" Grid.Row="0" 
+            Height="32"
+            FontSize="18"   
+            Text="New Project"         
+            />
+
+        <Label Content="Project Path" 
+               Grid.Column="0" Grid.Row="1"
+               HorizontalAlignment="Left"
+               VerticalContentAlignment="Center"
+               FontSize="14"  
+               />
+        <TextBox x:Name="TB_Path"
+            Grid.Column="1" Grid.Row="1"        
+            Margin="0,0,50,0"      
+            Height="32"
+            FontSize="14"  
+            TextAlignment="Left"    
+            VerticalContentAlignment="Center"        
+            />
+        <Button   x:Name="B_Browser"
+            Content="..."
+            Grid.Column="1" Grid.Row="1" 
+            HorizontalAlignment="Right"
+            Height="32"
+            Width="50"
+            Click="B_Browser_OnClick"
+            />
+
+        <Button x:Name="B_OK"
+                Content="OK"
+                Grid.Column="0" Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Width="100" Height="30"
+                HorizontalAlignment="Left"
+                Margin="50,0"
+                Click="B_OK_OnClick"
+                />
+        <Button x:Name="B_Cancel"
+                Content="Cancel"
+                Grid.Column="0" Grid.Row="2" 
+                Grid.ColumnSpan="2"
+                Width="100" Height="30"
+                HorizontalAlignment="Right"
+                Margin="50,0"
+                Click="B_Cancel_OnClick"
+                />
+    </Grid>
+</Controls:MetroWindow>
