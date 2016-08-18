@@ -2,6 +2,7 @@
 A beautiful and easy to use installer on windows
 
 This project uses WPF to make a beautiful GUI, and uses LzmaSDK to uncompress package files.
+![image](https://github.com/ZT-/Virtion.Installer/tree/master/Image/screenshot.png)
  
 #How to use it?
 1. Open Virtion.Installer.Packager.exe and click the menu "New".
