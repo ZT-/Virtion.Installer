@@ -32,8 +32,8 @@ namespace Virtion.Installer.Packager
 
         public string ProjectPath;
         public const string DefaultIcon = "default.ico";
-        public const string DefaultUninstallModuel = "Uninstall.exe";
-        public const string DefaultUiModuel = "Virtion.Installer.UI.exe";
+        public const string DefaultUninstallModule = "Uninstall.exe";
+        public const string DefaultUiModule = "Virtion.Installer.UI.exe";
         public string InstallFilesPath
         {
             get

@@ -60,9 +60,9 @@ namespace Virtion.Installer.Packager
             this.RecourseMap = new Dictionary<string, string>();
             RecourseMap["{Icon}"] = App.MainWindow.InstallFilesPath + App.MainWindow.CurrentProject.IconPath;
             RecourseMap["{Package}"] = this.outputPath + "pack";
-            RecourseMap["{UiModuel}"] = App.MainWindow.InstallFilesPath + App.MainWindow.CurrentProject.UiModuel;
-            RecourseMap["{UninstallModuel}"] = App.MainWindow.InstallFilesPath + App.MainWindow.CurrentProject.UninstallModuel;
-            RecourseMap["{MainEXE}"] = App.MainWindow.CurrentProject.MainModuel;
+            RecourseMap["{UiModule}"] = App.MainWindow.InstallFilesPath + App.MainWindow.CurrentProject.UiModule;
+            RecourseMap["{UninstallModule}"] = App.MainWindow.InstallFilesPath + App.MainWindow.CurrentProject.UninstallModule;
+            RecourseMap["{MainEXE}"] = App.MainWindow.CurrentProject.MainModule;
             RecourseMap["{AppName}"] = App.MainWindow.CurrentProject.AppName;
             RecourseMap["{Version}"] = App.MainWindow.CurrentProject.Version;
         }

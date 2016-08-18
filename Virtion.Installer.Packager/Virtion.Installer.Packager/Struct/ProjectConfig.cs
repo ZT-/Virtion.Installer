@@ -16,10 +16,10 @@ namespace Virtion.Installer.Packager.Struct
         public string ProjectName;
         public string Version;
         public string AppName;
-        public string MainModuel;
+        public string MainModule;
         public string IconPath;
-        public string UiModuel;
-        public string UninstallModuel;
+        public string UiModule;
+        public string UninstallModule;
         public Platform Platform;
         //public FileTreeItem PackageFiles;
     }

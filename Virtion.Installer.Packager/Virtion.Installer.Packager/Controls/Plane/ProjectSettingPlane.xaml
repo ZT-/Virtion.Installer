@@ -71,67 +71,67 @@
              />
 
 
-        <Label Content="MainModuel" 
+        <Label Content="MainModule" 
                Grid.Column="0" Grid.Row="3"
                HorizontalAlignment="Left"
                VerticalContentAlignment="Center"
                FontSize="14"  
                />
-        <TextBox x:Name="TB_MainModuel"
+        <TextBox x:Name="TB_MainModule"
             Grid.Column="1" Grid.Row="3" 
             Height="32"
             FontSize="18"          
             Margin="0,0,50,0"     
             />
-        <Button     x:Name="B_MainModuel"
+        <Button     x:Name="B_MainModule"
             Content="..."
             Grid.Column="1" Grid.Row="3" 
             HorizontalAlignment="Right"
             Height="32"
             Width="50"
-             Click="B_MainModuel_OnClick"       
+             Click="B_MainModule_OnClick"       
             />
 
-        <Label Content="UiModuel" 
+        <Label Content="UiModule" 
                Grid.Column="0" Grid.Row="4"
                HorizontalAlignment="Left"
                VerticalContentAlignment="Center"
                FontSize="14"  
                />
-        <TextBox x:Name="TB_UiModuel"
+        <TextBox x:Name="TB_UiModule"
             Grid.Column="1" Grid.Row="4" 
             Height="32"
             FontSize="18"          
             Margin="0,0,50,0"     
             />
-        <Button     x:Name="B_UiModuel"
+        <Button     x:Name="B_UiModule"
             Content="..."
             Grid.Column="1" Grid.Row="4" 
             HorizontalAlignment="Right"
             Height="32"
             Width="50"
-            Click="B_UiModuel_OnClick" />
+            Click="B_UiModule_OnClick" />
 
 
-        <Label Content="UninstallModuel" 
+        <Label Content="UninstallModule" 
                Grid.Column="0" Grid.Row="5"
                HorizontalAlignment="Left"
                VerticalContentAlignment="Center"
                FontSize="14"  
                />
-        <TextBox x:Name="TB_UninstallModuel"
+        <TextBox x:Name="TB_UninstallModule"
             Grid.Column="1" Grid.Row="5" 
             Height="32"
             FontSize="18"
             Margin="0,0,50,0"     
             />
-        <Button     x:Name="B_UninstallModuel"
+        <Button     x:Name="B_UninstallModule"
             Content="..."
             Grid.Column="1" Grid.Row="5" 
             HorizontalAlignment="Right"
             Height="32"
             Width="50"
-            Click="B_UninstallModuel_OnClick"        />
+            Click="B_UninstallModule_OnClick"        />
 
     </Grid>
 </UserControl>

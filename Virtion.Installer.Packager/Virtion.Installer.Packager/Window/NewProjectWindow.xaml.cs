@@ -59,9 +59,9 @@ namespace Virtion.Installer.Packager.Window
 
             var project = new ProjectConfig();
             project.ProjectName = this.TB_ProjectName.Text;
-            project.UninstallModuel = MainWindow.DefaultUninstallModuel;
+            project.UninstallModule = MainWindow.DefaultUninstallModule;
 
-            project.UiModuel = MainWindow.DefaultUiModuel;
+            project.UiModule = MainWindow.DefaultUiModule;
             project.IconPath = MainWindow.DefaultIcon;
             App.MainWindow.ProjectPath = path;
             App.MainWindow.CurrentProject = project;
