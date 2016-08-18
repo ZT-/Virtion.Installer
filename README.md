@@ -20,10 +20,9 @@ This project uses WPF to make a beautiful GUI, and uses LzmaSDK to uncompress pa
 #Moduel Description
 + Installer is made up of two parts
  - Virtion.Installer.UI is the GUI of installer,I use wpf to write this part,you can use other framework or other language to write it,only if call some simple interfaces whitch i supplied.
- - Virtion.Installer is the core moduel of install,this part use c++ writen.
-
+ - Virtion.Installer is the core moduel of install,this part use c++ writen.It used LzmaSDK uncompress 7z package form PE resourse. And it has some other helper function like create disktop icon,start menu icon and create uninstall info on system register table.
++ Packger is Virtion.Installer.Packager moduel,it also use wpf to write gui.The rc.exe and link.exe is a little part of vs2013 complier.
++ uninstall moduel read uninstall.dat to remove install files and other info form you computer.
 
 #Working Principle
-
-
-
+wait ... 
