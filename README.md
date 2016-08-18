@@ -16,3 +16,14 @@ This project uses WPF to make a beautiful GUI, and uses LzmaSDK to uncompress pa
   - UninstallModuel: Uninstall.exe
 5. Click the menu "Build" and look the result on the output plane.if success the installer.exe will appera on the "Output" folder in your project path. 
 6. Save project and exit.
+
+#Moduel Description
++ Installer is made up of two parts
+ - Virtion.Installer.UI is the GUI of installer,I use wpf to write this part,you can use other framework or other language to write it,only if call some simple interfaces whitch i supplied.
+ - Virtion.Installer is the core moduel of install,this part use c++ writen.
+
+
+#Working Principle
+
+
+
