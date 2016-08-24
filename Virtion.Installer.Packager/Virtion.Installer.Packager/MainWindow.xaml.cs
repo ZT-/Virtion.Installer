@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.IO;
 using MahApps.Metro.Controls;
 using System.Windows;
@@ -76,7 +77,6 @@ namespace Virtion.Installer.Packager
             InitializeComponent();
         }
 
-
         private void B_Open_OnClick(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.OpenFileDialog dialog = new System.Windows.Forms.OpenFileDialog();
@@ -105,7 +105,6 @@ namespace Virtion.Installer.Packager
                 {
                     this.CB_Platform.SelectedIndex = 1;
                 }
-
             }
         }
 
@@ -116,8 +115,8 @@ namespace Virtion.Installer.Packager
             {
                 Directory.CreateDirectory(this.OutputPath);
             }
-
             complier.Start();
+            this.B_Save_OnClick(null, null);
         }
 
         private void B_New_OnClick(object sender, RoutedEventArgs e)
@@ -127,8 +126,6 @@ namespace Virtion.Installer.Packager
 
         private void B_Save_OnClick(object sender, RoutedEventArgs e)
         {
-            this.P_Setting.SaveConfig();
-
             if (this.CB_Platform.Text == "X86")
             {
                 this.CurrentProject.Platform = Platform.X86;
@@ -139,6 +136,7 @@ namespace Virtion.Installer.Packager
             }
             string s = JsonConvert.SerializeObject(this.CurrentProject);
             FileManager.WriteFile(this.ProjectPath + this.CurrentProject.ProjectName + ".vproj", s);
+            this.P_Setting.IsChange = false;
         }
 
         private void CB_Platform_OnDropDownClosed(object sender, EventArgs e)
@@ -154,6 +152,22 @@ namespace Virtion.Installer.Packager
             else
             {
                 this.CurrentProject.Platform = Platform.X64;
+            }
+        }
+
+        private void MainWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            if (this.P_Setting.IsChange == true)
+            {
+                var result = MessageBox.Show("Do you want to save project ?", "Tip", MessageBoxButton.YesNoCancel);
+                if (result == MessageBoxResult.OK)
+                {
+                    this.B_Save_OnClick(null, null);
+                }
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
             }
         }
     }

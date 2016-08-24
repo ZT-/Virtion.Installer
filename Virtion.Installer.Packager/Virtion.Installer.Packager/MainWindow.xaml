@@ -14,7 +14,7 @@
         WindowCloseButtonStyle="{DynamicResource CommondButtonStyle}"
         WindowStartupLocation="CenterScreen"     
         Height="700" Width="1100" Icon="Resource/icon.ico"
-    
+        Closing="MainWindow_OnClosing"
     >
     <Grid >
         <Grid.RowDefinitions>

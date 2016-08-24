@@ -19,6 +19,8 @@ namespace Virtion.Installer.UI
 {
     public partial class MainWindow : Window
     {
+        public const string DefaultPath = "D:\\ETest";
+
         [DllImport("Installer.exe", SetLastError = true)]
         public static extern void Exit();
 
@@ -28,6 +30,7 @@ namespace Virtion.Installer.UI
         public MainWindow()
         {
             InitializeComponent();
+            this.TB_Path.Text = DefaultPath;
         }
 
         private void HideOption()
@@ -57,12 +60,10 @@ namespace Virtion.Installer.UI
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
+            if (e.Key == Key.Enter)
+            {
+                this.B_Install_MouseDown(null, null);
+            }
         }
 
         private void B_Install_MouseDown(object sender, MouseButtonEventArgs e)
@@ -134,7 +135,7 @@ namespace Virtion.Installer.UI
                 {
                     s += folder.SelectedPath;
                 }
-                this.TB_Path.Text =s;
+                this.TB_Path.Text = s;
             }
         }
 

@@ -10,11 +10,10 @@
         Background="Transparent"
         MouseDown="Window_MouseDown"
         KeyDown="Window_KeyDown"
-        Loaded="Window_Loaded"
         >
 
     <Window.Resources>
-        
+
         <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
             <Setter Property="Template">
                 <Setter.Value>
@@ -45,7 +44,7 @@
                         </Grid>
 
                         <ControlTemplate.Triggers >
-                            
+
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="G_Content" Property="Opacity" Value="0.75" />
                             </Trigger>
@@ -63,7 +62,7 @@
                                 <Setter TargetName="imageNoChecked" Property="Visibility" Value="Visible" />
                             </Trigger>
                         </ControlTemplate.Triggers>
-                        
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -144,9 +143,28 @@
 
     <Border BorderBrush="Black"
 		BorderThickness="1">
+        <!--<Grid Background="#3196ef">-->
         <Grid>
+            <!--<Border Width="100" Height="100" 
+                   VerticalAlignment="Top"
+                    Margin="180,80"
+                    HorizontalAlignment="Left"
+                    >
+                <Border.Background>
+                    <ImageBrush ImageSource="Resource/icon.ico"/>
+                </Border.Background>
+            </Border>
+
+            <TextBlock Text="Virtion.Installer"
+                       FontSize="48"
+                       Foreground="White"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="320,100,0,0"
+                       />-->
+
             <Grid.Background>
-                <ImageBrush ImageSource="pack://application:,,,/Virtion.Installer.UI;component/Resource/bg.jpg"/>
+                <ImageBrush ImageSource="pack://application:,,,/Virtion.Installer.UI;component/Resource/bg.png"/>
             </Grid.Background>
 
             <Border x:Name="B_Close"
@@ -173,7 +191,7 @@
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Bottom"
               >
-          
+
                 <Border x:Name="B_FilePath"
 					VerticalAlignment="Top"
 					HorizontalAlignment="Left"
@@ -194,7 +212,6 @@
 						HorizontalAlignment="Left"
 						VerticalAlignment="Center"
 						FontSize="14"
-						Text="D:\ETest"
                         />
                 </Border>
 
@@ -266,7 +283,7 @@
                     Text="用户使用协议"
                     Foreground="#3196ef"
                     TextDecorations="UnderLine"  />
-                
+
                 <ProgressBar x:Name="PB_ProgressBar"
                     Style="{StaticResource ProgressBarStyle}"
                     HorizontalAlignment="Stretch" 

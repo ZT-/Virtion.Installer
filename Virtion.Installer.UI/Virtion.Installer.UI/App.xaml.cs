@@ -22,9 +22,6 @@ namespace Virtion.Installer.UI
         {
             Thread thread = new Thread(() =>
             {
-                //path = Path.GetDirectoryName(startAppPath);
-                //System.Environment.CurrentDirectory = path;
-
                 App app = new App();
                 app.InitializeComponent();
                 app.Run();

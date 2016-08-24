@@ -124,7 +124,7 @@
     <Resource Include="Resource\uncheck.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\bg.jpg" />
+    <Resource Include="Resource\bg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

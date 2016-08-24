@@ -33,6 +33,7 @@
             Grid.Column="1" Grid.Row="0" 
             Height="32"
             FontSize="18"     
+            TextChanged="TB_AppName_OnTextChanged"     
             />
 
         <Label Content="Version" 
@@ -45,7 +46,8 @@
         <TextBox x:Name="TB_Version"
             Grid.Column="1" Grid.Row="1" 
             Height="32"
-            FontSize="18"          
+            FontSize="18"        
+            TextChanged="TB_Version_OnTextChanged"     
             />
 
         <Label Content="IconPath" 
@@ -60,6 +62,7 @@
             Height="32"
             FontSize="18"          
             Margin="0,0,50,0"     
+            TextChanged="TB_IconPath_OnTextChanged"     
             />
         <Button     x:Name="B_Icon"
             Content="..."
@@ -82,6 +85,7 @@
             Height="32"
             FontSize="18"          
             Margin="0,0,50,0"     
+            TextChanged="TB_MainModule_OnTextChanged"     
             />
         <Button     x:Name="B_MainModule"
             Content="..."
@@ -103,15 +107,15 @@
             Height="32"
             FontSize="18"          
             Margin="0,0,50,0"     
+            TextChanged="TB_UiModule_OnTextChanged"     
             />
-        <Button     x:Name="B_UiModule"
+        <Button x:Name="B_UiModule"
             Content="..."
             Grid.Column="1" Grid.Row="4" 
             HorizontalAlignment="Right"
             Height="32"
             Width="50"
             Click="B_UiModule_OnClick" />
-
 
         <Label Content="UninstallModule" 
                Grid.Column="0" Grid.Row="5"
@@ -124,6 +128,7 @@
             Height="32"
             FontSize="18"
             Margin="0,0,50,0"     
+            TextChanged="TB_UninstallModule_OnTextChanged"     
             />
         <Button     x:Name="B_UninstallModule"
             Content="..."

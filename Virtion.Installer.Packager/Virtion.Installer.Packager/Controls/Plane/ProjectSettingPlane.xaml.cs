@@ -2,11 +2,15 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Virtion.Installer.Packager.Struct;
 
 namespace Virtion.Installer.Packager.Controls.Plane
 {
     public partial class ProjectSettingPlane : UserControl
     {
+        public bool IsChange;
+        private ProjectConfig config;
+
         public ProjectSettingPlane()
         {
             InitializeComponent();
@@ -14,7 +18,7 @@ namespace Virtion.Installer.Packager.Controls.Plane
 
         public void LoadConfig()
         {
-            var config = App.MainWindow.CurrentProject;
+            config = App.MainWindow.CurrentProject;
             if (config == null)
             {
                 return;
@@ -53,6 +57,7 @@ namespace Virtion.Installer.Packager.Controls.Plane
                 return App.MainWindow.ProjectPath + "Install Files\\";
             }
         }
+
         private string packageFilesPath
         {
             get
@@ -62,19 +67,67 @@ namespace Virtion.Installer.Packager.Controls.Plane
         }
 
 
-        public void SaveConfig()
+        public void SaveConfig(string key, string value)
         {
-            var config = App.MainWindow.CurrentProject;
+            if (string.IsNullOrEmpty(value) == true)
+            {
+                return;
+            }
             if (config == null)
             {
                 return;
             }
-            config.AppName = this.TB_AppName.Text;
-            config.Version = this.TB_Version.Text;
-            config.IconPath = this.TB_IconPath.Text;
-            config.MainModule = this.TB_MainModule.Text;
-            config.UiModule = this.TB_UiModule.Text;
-            config.UninstallModule = this.TB_UninstallModule.Text;
+
+            this.IsChange = true;
+            switch (key)
+            {
+                case "AppName":
+                    if (config.AppName != value)
+                    {
+                        config.AppName = value;
+                        return;
+                    }
+                    break;
+                case "Version":
+                    if (config.Version != value)
+                    {
+                        config.Version = value;
+                        return;
+                    }
+                    break;
+                case "IconPath":
+                    if (config.IconPath != value)
+                    {
+                        config.IconPath = value;
+                        return;
+                    }
+                    break;
+                case "MainModule":
+                    if (config.MainModule != value)
+                    {
+                        config.MainModule = value;
+                        return;
+                    }
+                    break;
+                case "UiModule":
+                    if (config.UiModule != value)
+                    {
+                        config.UiModule = value;
+                        return;
+                    }
+                    break;
+                case "UninstallModule":
+                    if (config.UninstallModule != value)
+                    {
+                        config.UninstallModule = value;
+                        return;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            this.IsChange = false;
         }
 
         public void Clear()
@@ -89,6 +142,10 @@ namespace Virtion.Installer.Packager.Controls.Plane
 
         private void B_Icon_OnClick(object sender, RoutedEventArgs e)
         {
+            if (config == null)
+            {
+                return;
+            }
             if (string.IsNullOrEmpty(App.MainWindow.ProjectPath) == true)
             {
                 return;
@@ -112,11 +169,16 @@ namespace Virtion.Installer.Packager.Controls.Plane
                     }
                 }
                 this.TB_IconPath.Text = dialog.SafeFileName;
+                this.SaveConfig("IconPath", dialog.SafeFileName);
             }
         }
 
         private void B_MainModule_OnClick(object sender, RoutedEventArgs e)
         {
+            if (config == null)
+            {
+                return;
+            }
             if (string.IsNullOrEmpty(App.MainWindow.ProjectPath) == true)
             {
                 return;
@@ -126,8 +188,8 @@ namespace Virtion.Installer.Packager.Controls.Plane
             dialog.Filter = "Main Exe|*.exe";
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-               string srcPath = Path.GetDirectoryName(dialog.FileName) + "\\";
-               if (srcPath != this.packageFilesPath)
+                string srcPath = Path.GetDirectoryName(dialog.FileName) + "\\";
+                if (srcPath != this.packageFilesPath)
                 {
                     try
                     {
@@ -140,11 +202,16 @@ namespace Virtion.Installer.Packager.Controls.Plane
                     }
                 }
                 this.TB_MainModule.Text = dialog.SafeFileName;
+                this.SaveConfig("MainModule", dialog.SafeFileName);
             }
         }
 
         private void B_UiModule_OnClick(object sender, RoutedEventArgs e)
         {
+            if (config == null)
+            {
+                return;
+            }
             if (string.IsNullOrEmpty(App.MainWindow.ProjectPath) == true)
             {
                 return;
@@ -168,11 +235,16 @@ namespace Virtion.Installer.Packager.Controls.Plane
                     }
                 }
                 this.TB_UiModule.Text = dialog.SafeFileName;
+                this.SaveConfig("UiModule", dialog.SafeFileName);
             }
         }
 
         private void B_UninstallModule_OnClick(object sender, RoutedEventArgs e)
         {
+            if (config == null)
+            {
+                return;
+            }
             if (string.IsNullOrEmpty(App.MainWindow.ProjectPath) == true)
             {
                 return;
@@ -196,7 +268,40 @@ namespace Virtion.Installer.Packager.Controls.Plane
                     }
                 }
                 this.TB_UninstallModule.Text = dialog.SafeFileName;
+                this.SaveConfig("UninstallModule", dialog.SafeFileName);
             }
         }
+
+        private void TB_AppName_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("AppName", this.TB_AppName.Text);
+        }
+
+        private void TB_Version_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("Version", this.TB_Version.Text);
+        }
+
+        private void TB_IconPath_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("IconPath", this.TB_IconPath.Text);
+        }
+
+        private void TB_MainModule_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("MainModule", this.TB_MainModule.Text);
+        }
+
+        private void TB_UiModule_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("UiModule", this.TB_UiModule.Text);
+        }
+
+        private void TB_UninstallModule_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.SaveConfig("UninstallModule", this.TB_UninstallModule.Text);
+        }
+
+
     }
 }
