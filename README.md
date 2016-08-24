@@ -8,7 +8,7 @@ A beautiful and easy to use <b>Installer</b> on windows
 ![image](https://raw.githubusercontent.com/ZT-/Virtion.Installer/master/Other/Image/installer.png)
 
 #Download
-[Virtion.Packager V1.0](http://example.net/)
+[Virtion.Packager V1.0](https://github.com/ZT-/Virtion.Installer/releases)
 
 #Feature
 + Customizabl user interface module of installer.
