@@ -51,8 +51,8 @@ A beautiful and easy to use <b>Installer</b> on windows
 
 #Working Principle
 + About the installer:
- -This project uses WPF to make a beautiful GUI, and uses LzmaSDK to uncompress package files.
+  -This project uses WPF to make a beautiful GUI, and uses LzmaSDK to uncompress package files.
 + How C++ call C# method?
- -I use "CLR Hosting" Load the .net clr module,then call the method,C# call C++ DLL interface use "DllImport".
+  -I use "CLR Hosting" Load the .net clr module,then call the method,C# call C++ DLL interface use "DllImport".
 + How packager builder a exe?
- -I divide a little part of vs2013 complier, put it into "Builder",then create cmd scripts real time,at last run the scripts use rc.exe and link.exe make a exe.
+  -I divide a little part of vs2013 complier, put it into "Builder",then create cmd scripts real time,at last run the scripts use rc.exe and link.exe make a exe.
