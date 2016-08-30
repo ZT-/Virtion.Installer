@@ -1,5 +1,5 @@
 # Virtion.Installer
-A beautiful and easy to use <b>Installer</b> on windows
+A beautiful and easy use <b>Installer</b> on windows
 
 #Packager
 ![image](https://raw.githubusercontent.com/ZT-/Virtion.Installer/master/Other/Image/screenshot.png)
